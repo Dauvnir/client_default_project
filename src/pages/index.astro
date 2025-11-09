@@ -1,19 +1,22 @@
 ---
-import ContactForm from '../components/ContactForm.astro';
-import FindMe from '../components/FindMe.astro';
-import Footer from '../components/Footer.astro';
-import HeroSection from '../components/HeroSection.astro';
-import LastWork from '../components/LastWork.astro';
-import NavigationBar from '../components/NavigationBar.astro';
-import Services from '../components/Services.astro';
-import WhyUs from '../components/WhyUs.astro';
-import Statistics from '../components/Statistics.astro';
-import Reviews from '../components/Reviews.astro';
+import ContactForm from '../components/section/ContactForm.astro';
+import FindMe from '../components/section/FindMe.astro';
+import Footer from '../components/section/Footer.astro';
+import HeroSection from '../components/section/HeroSection.astro';
+import LastWork from '../components/section/LastWork.astro';
+import NavigationBar from '../components/section/NavigationBar.astro';
+import Services from '../components/section/Services.astro';
+import WhyUs from '../components/section/WhyUs.astro';
+import Statistics from '../components/section/Statistics.astro';
+import Reviews from '../components/section/Reviews.astro';
 import Layout from '../layouts/Layout.astro';
-
+import ResetStyles from '../components/global/ResetStyles.astro';
+import GlobalStyles from '../components/global/GlobalStyles.astro';
 ---
 
 <Layout>
+	<ResetStyles />
+	<GlobalStyles />
 	<NavigationBar />
 	<HeroSection />
 	<Services />
