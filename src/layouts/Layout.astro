@@ -1,24 +1,33 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Default project</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Default project</title>
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		padding: 0;
-		width: 100%;
-		height: 100%;
-		box-sizing: border-box;
-	}
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    position: relative;
+    background-color: var(--backgroundColorDark);
+    padding-top: 2rem;
+    padding-inline: clamp(
+      1rem,
+      -0.627rem + 7.229vw,
+      4rem
+    ); /* od 360 px do 1024px min 1rem do max 4rem*/
+  }
 </style>
