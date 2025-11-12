@@ -1,30 +1,33 @@
 ---
-import ContactForm from '../components/section/ContactForm.astro';
-import FindMe from '../components/section/FindMe.astro';
-import Footer from '../components/section/Footer.astro';
-import HeroSection from '../components/section/HeroSection.astro';
-import LastWork from '../components/section/LastWork.astro';
-import NavigationBar from '../components/section/NavigationBar.astro';
-import Services from '../components/section/Services.astro';
-import WhyUs from '../components/section/WhyUs.astro';
-import Statistics from '../components/section/Statistics.astro';
-import Reviews from '../components/section/Reviews.astro';
-import Layout from '../layouts/Layout.astro';
-import ResetStyles from '../components/global/ResetStyles.astro';
-import GlobalStyles from '../components/global/GlobalStyles.astro';
+import ContactForm from "../components/section/ContactForm.astro";
+import FindMe from "../components/section/FindMe.astro";
+import Footer from "../components/section/Footer.astro";
+import HeroSection from "../components/section/HeroSection.astro";
+import LastWork from "../components/section/LastWork.astro";
+import NavigationBar from "../components/section_components/NavigationBar.astro";
+import Header from "../components/section_components/Header.astro";
+import Services from "../components/section/Services.astro";
+import WhyUs from "../components/section/WhyUs.astro";
+import Statistics from "../components/section/Statistics.astro";
+import Reviews from "../components/section/Reviews.astro";
+import Layout from "../layouts/Layout.astro";
+import ResetStyles from "../components/global/ResetStyles.astro";
+import GlobalStyles from "../components/global/GlobalStyles.astro";
 ---
 
 <Layout>
-	<ResetStyles />
-	<GlobalStyles />
-	<NavigationBar />
-	<HeroSection />
-	<Services />
-	<LastWork />
-	<WhyUs />
-	<Statistics />
-	<Reviews />
-	<ContactForm />
-	<FindMe />
-	<Footer />
+  <ResetStyles />
+  <GlobalStyles />
+  <HeroSection>
+    <NavigationBar />
+    <Header />
+  </HeroSection>
+  <Services />
+  <LastWork />
+  <WhyUs />
+  <Statistics />
+  <Reviews />
+  <ContactForm />
+  <FindMe />
+  <Footer />
 </Layout>

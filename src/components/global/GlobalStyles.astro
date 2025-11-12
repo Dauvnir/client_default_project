@@ -20,30 +20,52 @@
   h5,
   a,
   p,
-  span {
+  span,
+  button,
+  div {
     font-family: "Raleway", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
     color: var(--fontColorLight);
   }
   h1 {
-    font-size: 72px;
+    font-size: clamp(
+      3rem,
+      2.187rem + 3.614vw,
+      4.5rem
+    ); /* 48px do 72 px - 360px viewp do 1024px*/
     font-weight: 700;
   }
   h2 {
-    font-size: 48px;
+    font-size: clamp(
+      2.5rem,
+      2.229rem + 1.205vw,
+      3rem
+    ); /* 40px do 48 px - 360px viewp do 1024px*/
     font-weight: 700;
   }
   h3 {
-    font-size: 40px;
+    font-size: clamp(
+      2rem,
+      1.729rem + 1.205vw,
+      2.5rem
+    ); /* 32px do 40 px - 360px viewp do 1024px*/
     font-weight: 600;
   }
   h4 {
-    font-size: 32px;
+    font-size: clamp(
+      1.5rem,
+      1.229rem + 1.205vw,
+      2rem
+    ); /* 24px do 32 px - 360px viewp do 1024px*/
     font-weight: 600;
   }
   h5 {
-    font-size: 24px;
+    font-size: clamp(
+      1.25rem,
+      1.114rem + 0.602vw,
+      1.5rem
+    ); /* 20px do 24 px - 360px viewp do 1024px*/
     font-weight: 500;
   }
   span,
