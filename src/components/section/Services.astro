@@ -1,2 +1,39 @@
 ---
+import Service from "../section_components/Service.astro";
 ---
+
+<section>
+  <div>
+    <h2>Oferowane usługi</h2>
+    <h5>W czym się specjalizujemy</h5>
+  </div>
+  <Service />
+  <Service />
+  <Service />
+  <Service />
+</section>
+
+<style>
+  section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 4rem;
+
+    margin-top: 4rem;
+    width: 100%;
+    height: auto;
+  }
+
+  div {
+    width: 100%;
+    height: auto;
+
+    display: block;
+    text-align: center;
+  }
+  h5 {
+    margin-top: 1rem;
+  }
+</style>

@@ -3,7 +3,7 @@ import backgroundImage from "../../assets/backgroundImage.jpg";
 import Image from "astro/components/Image.astro";
 ---
 
-<div id="darkOverlay">
+<section id="darkOverlay">
   <Image
     priority
     src={backgroundImage}
@@ -11,7 +11,7 @@ import Image from "astro/components/Image.astro";
     id="backgroundImage"
   />
   <slot />
-</div>
+</section>
 
 <style>
   #darkOverlay {
@@ -24,11 +24,6 @@ import Image from "astro/components/Image.astro";
     height: 100%;
 
     padding-top: 2rem;
-    padding-inline: clamp(
-      1rem,
-      -0.627rem + 7.229vw,
-      4rem
-    ); /* od 360 px do 1024px min 1rem do max 4rem */
 
     display: flex;
     justify-content: center;
