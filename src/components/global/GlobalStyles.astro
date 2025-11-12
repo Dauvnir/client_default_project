@@ -66,12 +66,12 @@
       1.114rem + 0.602vw,
       1.5rem
     ); /* 20px do 24 px - 360px viewp do 1024px*/
-    font-weight: 500;
+    font-weight: 400;
   }
   span,
   a {
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 400;
   }
   p {
     font-size: 16px;
@@ -79,10 +79,37 @@
   }
 
   section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 4rem;
+
     padding-inline: clamp(
       1rem,
       -0.627rem + 7.229vw,
       4rem
     ); /* od 360 px do 1024px min 1rem do max 4rem */
+
+    width: 100%;
+    height: auto;
+  }
+  section:not(:first-child) {
+    margin-top: 4rem;
+  }
+  a,
+  p,
+  span,
+  button {
+    line-height: 1.5;
+  }
+
+  .header {
+    width: 100%;
+    height: auto;
+
+    display: block;
+
+    text-align: center;
   }
 </style>

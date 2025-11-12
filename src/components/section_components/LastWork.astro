@@ -1,0 +1,45 @@
+---
+import Image from "astro/components/Image.astro";
+import ButtonKnowMore from "./ButtonKnowMore.astro";
+const { image, alt, title, description } = Astro.props;
+---
+
+<div>
+  <Image src={image} alt={alt} class="lastWorkImage" />
+  <h4>{title}</h4>
+  <p>
+    {description}
+  </p>
+  <ButtonKnowMore />
+</div>
+
+<style>
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    gap: 1rem;
+
+    width: 25rem;
+    height: auto;
+
+    padding: 2rem;
+    background-color: var(--backgroundColorDarkLight);
+    border-radius: 15px;
+  }
+  .lastWorkImage {
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+    border-radius: 15px;
+  }
+
+  @media screen and (max-width: 1023px) {
+    div {
+      width: 100%;
+      max-width: 30rem;
+    }
+  }
+</style>

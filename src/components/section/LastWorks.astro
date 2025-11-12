@@ -1,0 +1,73 @@
+---
+import LastWork from "../section_components/LastWork.astro";
+import modernizacjaInstalacji from "../../assets/modernizacjaInstalacji.png";
+import instalacjaOsprzetu from "../../assets/instalacjaOsprzetu.png";
+import sprzetRTVAGD from "../../assets/sprzetRTVAGD.png";
+import montazSystemowAlarmowych from "../../assets/montazSystemowAlarmowych.png";
+
+const altText: String[] = [
+  "Modernizacja starej instalacji elektrycznej",
+  "Instalacja osprzętu elektrycznego",
+  "Podłączanie sprzętu AGD i RTV",
+  "Montaż systemów alarmowych",
+];
+const titles: String[] = [
+  "Modernizacja starej instalacji elektrycznej",
+  "Instalacja osprzętu elektrycznego",
+  "Podłączanie sprzętu AGD i RTV",
+  "Montaż systemów alarmowych",
+];
+const descriptions: String[] = [
+  "Wymiana przestarzałych przewodów, zabezpieczeń i rozdzielni na nowoczesne rozwiązania, które zwiększają bezpieczeństwo i niezawodność instalacji.",
+  "Montaż i podłączenie wszelkiego rodzaju gniazd, włączników, ściemniaczy, termostatów oraz innych urządzeń sterujących,.",
+  "Profesjonalne i bezpieczne podłączanie urządzeń takich jak płyty indukcyjne, piekarniki, zmywarki, czy systemy kina domowego do istniejącej instalacji elektrycznej.",
+  "Instalacja i konfiguracja systemów bezpieczeństwa, takich jak alarmy antywłamaniowe, czujniki dymu oraz kamery monitoringu, zapewniając ochronę mienia.",
+];
+---
+
+<section>
+  <div class="header">
+    <h2>Ostatnie prace</h2>
+    <h5>Wykonane naprawy elektryczny dla klientów</h5>
+  </div>
+  <div id="lastWorks">
+    <LastWork
+      image={modernizacjaInstalacji}
+      alt={altText[0]}
+      title={titles[0]}
+      description={descriptions[0]}
+    />
+    <LastWork
+      image={instalacjaOsprzetu}
+      alt={altText[1]}
+      title={titles[1]}
+      description={descriptions[1]}
+    />
+    <LastWork
+      image={sprzetRTVAGD}
+      alt={altText[2]}
+      title={titles[2]}
+      description={descriptions[2]}
+    />
+    <LastWork
+      image={montazSystemowAlarmowych}
+      alt={altText[3]}
+      title={titles[3]}
+      description={descriptions[3]}
+    />
+  </div>
+</section>
+
+<style>
+  #lastWorks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+    width: 100%;
+    height: auto;
+  }
+</style>

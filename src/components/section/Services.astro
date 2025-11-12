@@ -1,39 +1,78 @@
 ---
 import Service from "../section_components/Service.astro";
+import instalacjeElektryczne from "../../assets/instalacjeElektryczne.png";
+import pomiaryOdbiory from "../../assets/pomiaryOdbiory.png";
+import usuwanieAwarii from "../../assets/usuwanieAwarii.png";
+import montazOswietlenie from "../../assets/montazOswietlenie.png";
+
+const titles: String[] = [
+  "Instalacje elektryczne",
+  "Pomiary i odbiory",
+  "Usuwanie awarii 24/7",
+  "Montaż oświetlenia",
+];
+const descriptions: String[] = [
+  "Specjalizujemy się w kompleksowym wykonawstwie nowych instalacji elektrycznych w domach, mieszkaniach i lokalach usługowych. Zajmujemy się wszystkim od A do Z – od etapu projektowania i doradztwa, przez kucie bruzd i układanie przewodów, aż po montaż gniazdek, włączników i głównej rozdzielni. Gwarantujemy, że każda instalacja jest wykonana solidnie, bezpiecznie i zgodnie z najnowszymi normami budowlanymi.",
+  "Świadczymy usługi w zakresie niezbędnych pomiarów elektrycznych, kluczowych dla bezpieczeństwa i legalności instalacji. Wykonujemy pomiary rezystancji izolacji, skuteczności ochrony przeciwporażeniowej oraz sprawdzamy wyłączniki różnicowoprądowe. Usługa ta jest niezbędna przy oddawaniu nowego budynku do użytku, po każdej modernizacji oraz w ramach obowiązkowych przeglądów okresowych. Po zakończeniu badań wystawiamy stosowny protokół, potwierdzający sprawność instalacji i wymagany przez ubezpieczyciela.",
+  "Rozumiemy, że nagły brak prądu, zwarcia czy inne usterki wymagają natychmiastowej reakcji. Dlatego oferujemy profesjonalne pogotowie elektryczne dostępne 24 godziny na dobę, 7 dni w tygodniu. Gwarantujemy szybki dojazd na miejsce, sprawną diagnostykę problemu i skuteczne usunięcie awarii. Naszym priorytetem jest jak najszybsze przywrócenie zasilania i zapewnienie pełnego bezpieczeństwa Twojej instalacji.",
+  "Oferujemy profesjonalny montaż każdego rodzaju oświetlenia, zarówno wewnętrznego, jak i zewnętrznego. Pomożemy Ci zainstalować nowoczesne systemy LED, oświetlenie szynowe, eleganckie lampy wiszące, kinkiety oraz punkty świetlne w suficie podwieszanym. Doradzamy również w zakresie optymalnego rozmieszczenia światła, aby stworzyć funkcjonalną i klimatyczną przestrzeń. Niezależnie od tego, czy chodzi o oświetlenie salonu, czy ogrodu, wykonamy montaż sprawnie i estetycznie.",
+];
 ---
 
 <section>
-  <div>
+  <div class="header">
     <h2>Oferowane usługi</h2>
     <h5>W czym się specjalizujemy</h5>
   </div>
-  <Service />
-  <Service />
-  <Service />
-  <Service />
+  <div id="services">
+    <Service
+      image={instalacjeElektryczne}
+      title={titles[0]}
+      description={descriptions[0]}
+    />
+    <Service
+      image={pomiaryOdbiory}
+      title={titles[1]}
+      description={descriptions[1]}
+    />
+    <Service
+      image={usuwanieAwarii}
+      title={titles[2]}
+      description={descriptions[2]}
+    />
+    <Service
+      image={montazOswietlenie}
+      title={titles[3]}
+      description={descriptions[3]}
+    />
+  </div>
 </section>
 
 <style>
-  section {
+  #services {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: nowrap;
     flex-direction: column;
-    gap: 4rem;
+    gap: 2rem;
 
-    margin-top: 4rem;
     width: 100%;
     height: auto;
   }
 
-  div {
-    width: 100%;
-    height: auto;
-
-    display: block;
-    text-align: center;
-  }
   h5 {
     margin-top: 1rem;
+  }
+
+  @media screen and (max-width: 1023px) {
+    #services {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: start;
+      justify-content: center;
+      gap: 2rem;
+    }
   }
 </style>

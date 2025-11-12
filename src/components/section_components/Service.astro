@@ -1,20 +1,74 @@
 ---
-import instalacjeElektryczne from "../../assets/instalacjeElektryczne.png";
+import { Image } from "astro:assets";
+import ButtonKnowMore from "./ButtonKnowMore.astro";
+const { image, title, description } = Astro.props;
 ---
 
-<div>
-  <Image src={instalacjeElektryczne} alt="instalacjeElektryczne">
-    <div>
-      <h3>Instalacje Elektryczne</h3>
-      <p>
-        Specjalizujemy się w kompleksowym wykonawstwie nowych instalacji
-        elektrycznych w domach, mieszkaniach i lokalach usługowych. Zajmujemy
-        się wszystkim od A do Z – od etapu projektowania i doradztwa, przez
-        kucie bruzd i układanie przewodów, aż po montaż gniazdek, włączników i
-        głównej rozdzielni. Gwarantujemy, że każda instalacja jest wykonana
-        solidnie, bezpiecznie i zgodnie z najnowszymi normami budowlanymi.
-      </p>
-      <button> Dowiedz się więcej </button>
-    </div>
-  </Image>
+<div id="service">
+  <Image src={image} alt="instalacjeElektryczne" class="imageService" />
+  <div class="serviceContent">
+    <h4>{title}</h4>
+    <p>
+      {description}
+    </p>
+    <ButtonKnowMore />
+  </div>
 </div>
+
+<style>
+  #service {
+    display: inline-flex;
+    gap: 2rem;
+
+    width: clamp(50rem, 27.143rem + 35.714vw, 70rem);
+    height: 24rem;
+
+    background-color: var(--backgroundColorDarkLight);
+
+    border-radius: 15px;
+    padding: 3rem 2rem;
+  }
+
+  .imageService {
+    height: 100%;
+    width: auto;
+
+    object-fit: fill;
+    border-radius: 15px;
+  }
+
+  .serviceContent {
+    display: flex;
+    flex-grow: 1;
+    align-items: start;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  @media screen and (max-width: 1023px) {
+    #service {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: column;
+
+      width: clamp(20rem, 18.371rem + 7.24vw, 23rem);
+      height: auto;
+
+      padding: clamp(1.5rem, 1.229rem + 1.207vw, 2rem);
+    }
+
+    .imageService {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  @media screen and (max-width: 850px) {
+    #service {
+      width: 100%;
+      max-width: 30rem;
+    }
+  }
+</style>
