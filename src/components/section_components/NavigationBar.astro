@@ -72,15 +72,15 @@ import logo from "../../assets/logo.png";
     list-style: none;
     overflow: hidden;
 
-    li {
+    & li {
       cursor: pointer;
     }
 
-    a {
+    & a {
       text-decoration: none;
     }
 
-    li:first-child a {
+    & li:first-child a {
       text-decoration: underline;
     }
   }
@@ -132,13 +132,13 @@ import logo from "../../assets/logo.png";
       transition: all 1s;
       will-change: transform;
 
-      ul {
+      & ul {
         background-color: var(--backgroundColorDarkLight);
         border-radius: 15px 0 0 15px;
         list-style-type: none;
         padding-block: 0.5rem;
 
-        li {
+        & li {
           padding-block: 0.5rem;
           padding-left: 2rem;
           padding-right: clamp(
@@ -147,7 +147,7 @@ import logo from "../../assets/logo.png";
             4rem
           ); /* tyle co BODY padding*/
 
-          a {
+          & a {
             text-decoration: none;
           }
         }

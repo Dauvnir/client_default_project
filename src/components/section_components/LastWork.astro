@@ -1,16 +1,14 @@
 ---
 import Image from "astro/components/Image.astro";
-import ButtonKnowMore from "./ButtonKnowMore.astro";
 const { image, alt, title, description } = Astro.props;
 ---
 
 <div>
   <Image src={image} alt={alt} class="lastWorkImage" />
-  <h4>{title}</h4>
+  <h5>{title}</h5>
   <p>
     {description}
   </p>
-  <ButtonKnowMore />
 </div>
 
 <style>
