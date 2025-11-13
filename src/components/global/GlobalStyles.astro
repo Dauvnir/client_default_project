@@ -83,7 +83,9 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 4rem;
+
+    margin-top: 4rem;
+    gap: 2rem;
 
     padding-inline: clamp(
       1rem,
@@ -94,9 +96,7 @@
     width: 100%;
     height: auto;
   }
-  section:not(:first-child) {
-    margin-top: 4rem;
-  }
+
   a,
   p,
   span,
@@ -104,6 +104,10 @@
     line-height: 1.5;
   }
 
+  section:first-child {
+    margin-top: 0rem;
+    gap: 0rem;
+  }
   .header {
     width: 100%;
     height: auto;
@@ -113,7 +117,7 @@
     text-align: center;
   }
 
-  .header h5 {
+  .header span {
     margin-top: 1rem;
   }
 </style>

@@ -22,7 +22,7 @@ const descriptions: String[] = [
 <section>
   <div class="header">
     <h2>Oferowane usługi</h2>
-    <h5>W czym się specjalizujemy</h5>
+    <span>W czym się specjalizujemy</span>
   </div>
   <div id="services">
     <Service
@@ -49,6 +49,10 @@ const descriptions: String[] = [
 </section>
 
 <style>
+  section {
+    margin-top: 4rem;
+    gap: 0rem;
+  }
   #services {
     display: flex;
     justify-content: center;
@@ -60,7 +64,7 @@ const descriptions: String[] = [
     height: auto;
   }
 
-  h5 {
+  span {
     margin-top: 1rem;
   }
 
