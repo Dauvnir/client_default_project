@@ -1,3 +1,61 @@
 ---
 
 ---
+
+<section>
+  <h2>Statystyki</h2>
+  <span>Z czego jesteśmy dumni</span>
+  <div id="wrapperStats">
+    <div>
+      <h3>+92</h3>
+      <span>zrealizowanych klientów</span>
+    </div>
+    <div>
+      <h3>+10 lat</h3>
+      <span>doświadczenia w zawodzie</span>
+    </div>
+    <div>
+      <h3>+103</h3>
+      <span>zrealizowanych projektów</span>
+    </div>
+    <div>
+      <h3>+7</h3>
+      <span>zdobytych certyfikatów</span>
+    </div>
+  </div>
+</section>
+
+<style>
+  #wrapperStats {
+    width: 100%;
+    max-width: 80rem;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    & div {
+      width: calc((100% - 6rem) / 4);
+      min-width: 15rem;
+      height: auto;
+      h3 {
+        width: 100%;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+        color: var(--accentColor);
+        border-bottom: 2px solid var(--backgroundColorDarkLight);
+      }
+      span {
+        white-space: nowrap;
+      }
+    }
+  }
+  @media screen and (max-width: 1024px) {
+    #wrapperStats {
+      & div {
+        min-width: 20rem;
+      }
+    }
+  }
+</style>
