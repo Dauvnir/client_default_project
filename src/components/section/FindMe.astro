@@ -1,0 +1,53 @@
+---
+import AdditionalContact from "../section_components/AdditionalContact.astro";
+---
+
+<section>
+  <div class="header">
+    <h2>Znajdź nas również</h2>
+    <span>dodatkowe informacje kontaktowe</span>
+  </div>
+  <div id="findMeWrap">
+    <AdditionalContact />
+    <div id="iframeWrapper">
+      <iframe
+        width="100%"
+        height="650px"
+        title="find me map"
+        loading="lazy"
+        frameborder="0"
+        style="border:0"
+        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Opole&maptype=roadmap"
+        allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<style>
+  #findMeWrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: auto;
+  }
+  #iframeWrapper {
+    width: 35rem;
+    max-width: 100%;
+
+    overflow: hidden;
+    height: 20rem;
+
+    & iframe {
+      width: 100%;
+      height: 100%;
+
+      aspect-ratio: 1;
+      object-fit: contain;
+      border-radius: 15px;
+    }
+  }
+</style>
