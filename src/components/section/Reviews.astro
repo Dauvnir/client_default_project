@@ -1,3 +1,211 @@
 ---
+import Review from "../section_components/Review.astro";
+import review1 from "../../assets/review1.png";
+import review2 from "../../assets/review2.png";
 
+import review3 from "../../assets/review3.png";
+
+const descriptions: String[] = [
+  "Pełen profesjonalizm i świetne podejście do klienta. Pan elektryk szybko zlokalizował usterkę w naszej instalacji, która sprawiała problemy od miesięcy. Wszystko zostało sprawnie naprawione, a miejsce pracy pozostawione w idealnym porządku. Zdecydowanie polecam!",
+  "Terminowość i fachowość na najwyższym poziomie. Skorzystaliśmy z usług przy montażu nowego oświetlenia LED w całym mieszkaniu. Prace wykonano bardzo sprawnie, z dbałością o detale i zgodnie z ustaleniami. Świetny kontakt i rozsądna cena.",
+  "Zleciłam wymianę całej skrzynki bezpiecznikowej i modernizację części instalacji. Prace przebiegły bez zarzutu, a co najważniejsze, czuję się teraz bezpieczna we własnym domu. Pan elektryk wszystko dokładnie wyjaśnił i doradził.",
+];
+
+const authors: String[] = [
+  "Marcin Zalewski",
+  "Zbigniew Kowalewski",
+  "Oliwa Majewska",
+];
+const places: String[] = ["z Lewina Brzeskiego", "z Brzegu", "z Opola"];
 ---
+
+<section>
+  <div class="header">
+    <h2>Opinie klientów</h2>
+    <span>zadowolonych z naszych usług</span>
+  </div>
+  <div id="reviewsWrapper">
+    <div class="reviewsCarousel">
+      <Review
+        descriptions={descriptions[0]}
+        authors={authors[0]}
+        places={places[0]}
+        src={review2}
+      />
+      <Review
+        descriptions={descriptions[1]}
+        authors={authors[1]}
+        places={places[1]}
+        src={review3}
+      />
+      <Review
+        descriptions={descriptions[2]}
+        authors={authors[2]}
+        places={places[2]}
+        src={review1}
+      />
+      <Review
+        descriptions={descriptions[0]}
+        authors={authors[0]}
+        places={places[0]}
+        src={review2}
+      />
+      <Review
+        descriptions={descriptions[1]}
+        authors={authors[1]}
+        places={places[1]}
+        src={review3}
+      />
+      <Review
+        descriptions={descriptions[0]}
+        authors={authors[0]}
+        places={places[0]}
+        src={review2}
+        aria-hidden="true"
+      />
+      <Review
+        descriptions={descriptions[1]}
+        authors={authors[1]}
+        places={places[1]}
+        src={review3}
+        aria-hidden="true"
+      />
+      <Review
+        descriptions={descriptions[2]}
+        authors={authors[2]}
+        places={places[2]}
+        src={review1}
+        aria-hidden="true"
+      />
+      <Review
+        descriptions={descriptions[0]}
+        authors={authors[0]}
+        places={places[0]}
+        src={review2}
+        aria-hidden="true"
+      />
+      <Review
+        descriptions={descriptions[1]}
+        authors={authors[1]}
+        places={places[1]}
+        src={review3}
+        aria-hidden="true"
+      />
+    </div>
+  </div>
+  <!-- 
+  <div id="counter">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div> -->
+</section>
+
+<style>
+  #reviewsWrapper {
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: start;
+    align-items: center;
+    overflow: hidden;
+
+    position: relative;
+  }
+  #reviewsWrapper::before {
+    height: 100%;
+    width: 4rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+    /* Updated background */
+    background: linear-gradient(
+      to right,
+      hsl(0, 0%, 5%) 0%,
+      hsla(0, 0%, 5%, 0) 100%
+    );
+    content: " ";
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  #reviewsWrapper::after {
+    height: 100%;
+    width: 4rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 2;
+    background: linear-gradient(
+      to left,
+      hsl(0, 0%, 5%) 0%,
+      hsla(0, 0%, 5%, 0) 100%
+    );
+    content: " ";
+    pointer-events: none;
+  }
+  .reviewsCarousel {
+    width: max-content;
+    height: auto;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+
+    animation: 150s infinite linear carouselAnim;
+    will-change: transform;
+
+    padding-right: 3rem;
+  }
+  .reviewsCarousel.paused {
+    animation-play-state: paused;
+  }
+
+  #counter {
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    & div {
+      border-radius: 50%;
+      background-color: var(--backgroundColorGrey);
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+  @keyframes carouselAnim {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+</style>
+
+<script>
+  const carouselWrapper = document.querySelector("#reviewsWrapper");
+  const carouselTrack = document.querySelector(".reviewsCarousel");
+
+  if (carouselWrapper && carouselTrack) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          carouselTrack.classList.toggle("paused", !entry.isIntersecting);
+        });
+      },
+      {
+        threshold: 0.1,
+      },
+    );
+    observer.observe(carouselWrapper);
+  }
+</script>
