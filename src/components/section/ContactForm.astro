@@ -1,0 +1,44 @@
+---
+import { Image } from "astro:assets";
+import Form from "../section_components/Form.astro";
+import contactForm from "../../assets/contactForm.png";
+---
+
+<section>
+  <div class="header">
+    <h2>Kontakt z nami</h2>
+    <span>napisz do nas i dowiedz się więcej</span>
+  </div>
+  <div id="formWrapper">
+    <Form />
+    <div id="imgWrapperForm">
+      <Image src={contactForm} alt="ownerImage" />
+    </div>
+  </div>
+</section>
+
+<style>
+  #formWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 4rem;
+    width: 100%;
+  }
+  #imgWrapperForm {
+    width: 100%;
+    max-width: 30rem;
+    height: auto;
+
+    & img {
+      width: 100%;
+      height: auto;
+
+      aspect-ratio: 1;
+      object-fit: contain;
+      border-radius: 15px;
+    }
+  }
+</style>
