@@ -5,7 +5,7 @@ import logo from "../../assets/logo.png";
 
 <nav>
   <Image src={logo} priority alt="elektryk24.pl" />
-  <ul class="menu">
+  <ul id="menu">
     <li><a href="#top">HOME</a></li>
     <li><a href="#top">USŁUGI</a></li>
     <li><a href="#top">GALERIA</a></li>
@@ -66,7 +66,7 @@ import logo from "../../assets/logo.png";
     height: 100%;
     width: auto;
   }
-  .menu {
+  #menu {
     display: flex;
     gap: 3rem;
     list-style: none;
@@ -84,7 +84,7 @@ import logo from "../../assets/logo.png";
       text-decoration: underline;
     }
   }
-  .menu a {
+  #menu a {
     font-weight: 500;
   }
   button {
@@ -95,7 +95,7 @@ import logo from "../../assets/logo.png";
     display: none;
   }
   @media screen and (max-width: 1023px) {
-    .menu {
+    #menu {
       display: none;
     }
     .mobileMenu {
