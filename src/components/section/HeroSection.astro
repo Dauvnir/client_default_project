@@ -10,7 +10,14 @@ import Image from "astro/components/Image.astro";
     alt="backgroundImage"
     id="backgroundImage"
   />
-  <slot />
+  <div id="wrapper">
+    <h1>STARA <span>INSTALACJA</span> <br /> SPRAWIA PROBLEMY?</h1>
+    <span>Zadzwoń juz teraz, by ją wymienić.</span>
+    <a href="tel:+48887075912" title="Zadzwoń do elektryka" id="phoneBtn"
+      >Umów się teraz</a
+    >
+    <div id="phoneNumber"><span>887 075 912</span></div>
+  </div>
 </section>
 
 <style>
@@ -21,7 +28,7 @@ import Image from "astro/components/Image.astro";
     left: 0;
 
     width: 100%;
-    height: 100%;
+    height: 100dvh;
 
     padding-top: 2rem;
 
@@ -29,6 +36,7 @@ import Image from "astro/components/Image.astro";
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-top: -6.25rem;
   }
   #backgroundImage {
     position: absolute;
@@ -39,4 +47,62 @@ import Image from "astro/components/Image.astro";
     height: 100%;
     object-fit: cover;
   }
+
+  #wrapper {
+    width: 100%;
+    flex-grow: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  h1 {
+    text-align: center;
+
+    span {
+      font-size: inherit !important;
+      font-weight: inherit !important;
+      color: var(--accentColor);
+    }
+  }
+  span {
+    margin-top: 1rem;
+  }
+
+  a {
+    border-radius: 15px;
+    width: auto;
+    height: auto;
+
+    padding: 1rem 1.5rem;
+    margin-top: 3rem;
+
+    background-color: var(--accentColor);
+
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--fontColorDark) !important;
+
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  #phoneNumber {
+    padding: 1rem;
+    border-radius: 15px;
+    border: 3px solid var(--fontColorLight);
+    margin-top: 1rem;
+    & span {
+      font-size: 24px;
+      margin-top: 0;
+    }
+  }
 </style>
+
+<script>
+  const btnPhone = document.getElementById("phoneBtn") as HTMLAnchorElement;
+  if (btnPhone && window.innerWidth > 1023) {
+    btnPhone.href = "#contactFormUs";
+  }
+</script>
