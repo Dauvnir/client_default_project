@@ -128,4 +128,49 @@
   * {
     scroll-behavior: smooth;
   }
+
+  img {
+    background: linear-gradient(
+      90deg,
+      hsl(0, 0%, 15%) 0%,
+      hsl(0, 0%, 25%) 50%,
+      hsl(0, 0%, 15%) 100%
+    );
+
+    background-size: 200% 100%;
+
+    animation: shimmer 4s infinite linear;
+  }
+  img::before {
+    padding: 0.5rem;
+  }
+
+  .stopImageAnimation {
+    background: transparent;
+    animation-play-state: paused;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
 </style>
+
+<script>
+  const images = document.querySelectorAll<HTMLImageElement>("img");
+
+  images.forEach((img) => {
+    const stopAnim = () => img.classList.add("stopImageAnimation");
+
+    if (img.complete) {
+      stopAnim();
+    } else {
+      img.addEventListener("load", stopAnim);
+      img.addEventListener("error", stopAnim);
+    }
+  });
+</script>
