@@ -1,0 +1,51 @@
+---
+import Image from "astro/components/Image.astro";
+import logoGoogle from "../../assets/logoGoogle.png";
+import logoSep from "../../assets/logoSEP.png";
+import logoFixly from "../../assets/logoFixly.png";
+---
+
+<section>
+  <div class="header">
+    <h2>Współprace</h2>
+    <span>Pracujemy również z innymi firmami</span>
+  </div>
+  <div id="collaborationLogoWrap">
+    <div class="collaborationLogo">
+      <Image src={logoGoogle} alt="Logo firmy Google" />
+    </div>
+    <div class="collaborationLogo">
+      <Image src={logoFixly} alt="Logo firmy Fixly" />
+    </div>
+    <div class="collaborationLogo">
+      <Image src={logoSep} alt="Logo certyfikatu SEP" />
+    </div>
+    <div class="collaborationLogo">
+      <Image src={logoGoogle} alt="Logo firmy Google" />
+    </div>
+    <div class="collaborationLogo">
+      <Image src={logoFixly} alt="Logo firmy Fixly" />
+    </div>
+  </div>
+</section>
+
+<style>
+  #collaborationLogoWrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4rem;
+    width: 100%;
+  }
+  .collaborationLogo {
+    width: auto;
+    height: 5rem;
+  }
+  .collaborationLogo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+  }
+</style>

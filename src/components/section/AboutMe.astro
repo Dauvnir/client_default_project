@@ -19,7 +19,6 @@ const imageParagraph: string =
         alt="Zdjęcie właściciela firmy, elektryka."
       />
     </div>
-
     <p>
       {imageParagraph}
     </p>
@@ -27,61 +26,41 @@ const imageParagraph: string =
 </section>
 
 <style>
-  /* section:first-child {
-    margin-top: 4rem;
+  section {
+    width: 100%;
+    height: auto;
   }
+
   #AboutMeWrap {
+    width: 100%;
+    height: auto;
+
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     flex-direction: row;
     gap: 2rem;
-
+  }
+  #AboutMeWrap p,
+  #AboutMeWrap div {
     width: 100%;
-    max-width: 70rem;
-    height: 25rem;
-    overflow: hidden;
+    max-width: 35rem;
+  }
 
-    margin-top: 2rem;
-    & div {
-      width: 50%;
-      height: 100%;
+  #AboutMeWrap div img {
+    width: 100%;
+    height: 100%;
 
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      & img {
-        width: 100%;
-        height: auto;
-        border-radius: 15px;
-        object-fit: contain;
-        object-position: center;
-        aspect-ratio: 1;
-      }
-    }
-
-    & p {
-      width: 50%;
-      height: auto;
-    }
+    object-fit: contain;
+    object-position: top;
   }
 
   @media screen and (max-width: 1023px) {
     #AboutMeWrap {
       flex-wrap: wrap;
-      height: auto;
-      width: 100%;
-      max-width: 45rem;
-      height: auto;
-
-      & div {
-        width: 100%;
-        max-width: 30rem;
-        height: auto;
-      }
-      & p {
-        width: 100%;
-      }
     }
-  } */
+    #AboutMeWrap div {
+      flex-shrink: 1;
+    }
+  }
 </style>
