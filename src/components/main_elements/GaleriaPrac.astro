@@ -1,0 +1,90 @@
+---
+import GalleryWork from "../section_components/GalleryWork.astro";
+import pomiaryOdbiory from "../../assets/pomiaryOdbiory.png";
+import wymianaRozdzielnicy from "../../assets/wymianaRozdzielnicy.png";
+import montazInstalacjiGromowej from "../../assets/montazInstalacjiGromowej.png";
+import okresowePomiaryElektryczne from "../../assets/okresowePomiaryElektryczne.png";
+import instalacjaOswietleniaOgrodowego from "../../assets/instalacjaOswietleniaOgrodowego.png";
+import podlaczeniePlytyIndukcyjnej from "../../assets/podlaczeniePlytyIndukcyjnej.png";
+import usuwanieAwarii from "../../assets/usuwanieAwarii.png";
+import montazWideomofonu from "../../assets/montazWideomofonu.png";
+import instalacjaSmartHome from "../../assets/instalacjaSmartHome.png";
+import wykonaniePrzyłącza from "../../assets/wykonaniePrzyłącza.png";
+---
+
+<section>
+  <div class="header">
+    <h2>Galeria prac</h2>
+    <span>Wykonane prace dla klientów</span>
+  </div>
+  <div id="galleryOfWorks">
+    <GalleryWork
+      image={wymianaRozdzielnicy}
+      alt="Wymiana rozdzielnicy w mieszkaniu"
+      title="Wymiana rozdzielnicy w mieszkaniu"
+    />
+    <GalleryWork
+      image={pomiaryOdbiory}
+      alt="Pomiary elektryczne skrzyni rozdzielczej"
+      title="Pomiary elektryczne skrzyni rozdzielczej"
+    />
+    <GalleryWork
+      image={montazInstalacjiGromowej}
+      alt="Montaż instalacji gromowej na dachu klienta"
+      title="Montaż instalacji gromowej na dachu klienta"
+    />
+    <GalleryWork
+      image={okresowePomiaryElektryczne}
+      alt="Okresowe pomiary elektryczne instalacji klienta"
+      title="Okresowe pomiary elektryczne instalacji klienta"
+    />
+    <GalleryWork
+      image={instalacjaOswietleniaOgrodowego}
+      alt="Instalacja oświetlenia ogrodowego"
+      title="Instalacja oświetlenia ogrodowego"
+    />
+    <GalleryWork
+      image={podlaczeniePlytyIndukcyjnej}
+      alt="Podłączenie płyty indukcyjnej"
+      title="Podłączenie płyty indukcyjnej"
+    />
+    <GalleryWork
+      image={usuwanieAwarii}
+      alt="Usuwanie nagłej awarii wieczorem w domu klienta"
+      title="Usuwanie nagłej awarii wieczorem w domu klienta"
+    />
+    <GalleryWork
+      image={montazWideomofonu}
+      alt="Montaż wideomofonu"
+      title="Montaż wideomofonu"
+    />
+    <GalleryWork
+      image={instalacjaSmartHome}
+      alt="Instalacja urządzeń smarthome i konfiguracja systemu"
+      title="Instalacja urządzeń smarthome i konfiguracja systemu"
+    />
+    <GalleryWork
+      image={wykonaniePrzyłącza}
+      alt="Wykonanie przyłącza elektrycznego przy domu klienta"
+      title="Wykonanie przyłącza elektrycznego przy domu klienta"
+    />
+  </div>
+</section>
+
+<style>
+  section {
+    margin-top: 4rem;
+    gap: 2rem;
+  }
+  #galleryOfWorks {
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+</style>

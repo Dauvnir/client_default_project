@@ -1,0 +1,46 @@
+---
+import Image from "astro/components/Image.astro";
+const { image, alt, title } = Astro.props;
+---
+
+<div>
+  <figure>
+    <Image src={image} priority alt={alt} />
+    <figcaption>
+      <strong>{title}</strong>
+    </figcaption>
+  </figure>
+</div>
+
+<style>
+  div {
+    width: 100%;
+    max-width: 20rem;
+    height: auto;
+
+    background-color: var(--backgroundColorDarkLight);
+    border-radius: 15px;
+
+    padding: 1rem;
+  }
+
+  figure {
+    width: 100%;
+    height: 21.5rem;
+
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  figure img {
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+    aspect-ratio: 1;
+    border-radius: 15px;
+  }
+</style>
