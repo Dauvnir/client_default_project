@@ -24,11 +24,11 @@ import Image from "astro/components/Image.astro";
   #darkOverlay {
     background-color: rgba(0, 0, 0, 0.6);
     position: relative;
-    top: 0;
+    top: -6rem;
     left: 0;
 
     width: 100%;
-    height: 100dvh;
+    height: 100vh;
 
     padding-top: 2rem;
 
@@ -36,7 +36,6 @@ import Image from "astro/components/Image.astro";
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top: -6.25rem;
   }
   #backgroundImage {
     position: absolute;
@@ -46,6 +45,7 @@ import Image from "astro/components/Image.astro";
     width: 100%;
     height: 100%;
     object-fit: cover;
+    aspect-ratio: 1;
   }
 
   #wrapper {
@@ -57,7 +57,7 @@ import Image from "astro/components/Image.astro";
     align-items: center;
     flex-direction: column;
 
-    margin-top: 4rem;
+    margin-top: 3rem;
   }
   h1 {
     text-align: center;
