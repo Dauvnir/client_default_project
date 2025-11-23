@@ -1,0 +1,87 @@
+---
+import Image from "astro/components/Image.astro";
+import AboutMeImage from "../../assets/aboutMe.png";
+
+const imageParagraph: string =
+  "Odkąd pamiętam, fascynowała mnie elektryka. Po latach pracy w dużej firmie instalacyjnej, postanowiłem pójść na swoje. Zauważyłem, że na rynku brakuje usług, które łączyłyby wysoką jakość z prawdziwie indywidualnym podejściem do klienta. Dlatego w 2010 roku, z niewielkim kapitałem, ale ogromną determinacją, założyłem własną firmę. Postawiłem wszystko na jedną kartę: rzetelność, nowoczesne rozwiązania i budowanie zaufania.Początki były trudne. Sam wykonywałem większość zleceń, krok po kroku budując reputację solidnego fachowca. Dzięki ciężkiej pracy i licznym poleceniom, moja firma zaczęła się rozrastać. Dziś prowadzimy prężnie działający biznes, realizując zarówno drobne zlecenia w domach, jak i duże, kompleksowe instalacje, ale jedno się nie zmieniło: wciąż jestem wierny wartościom, które przyświecały mi na starcie.";
+---
+
+<section>
+  <div class="header">
+    <h2>O mnie</h2>
+    <span>Historia naszej firmy elektrycznej</span>
+  </div>
+  <div id="AboutMeWrap">
+    <div>
+      <Image
+        src={AboutMeImage}
+        priority
+        alt="Zdjęcie właściciela firmy, elektryka."
+      />
+    </div>
+
+    <p>
+      {imageParagraph}
+    </p>
+  </div>
+</section>
+
+<style>
+  /* section:first-child {
+    margin-top: 4rem;
+  }
+  #AboutMeWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 2rem;
+
+    width: 100%;
+    max-width: 70rem;
+    height: 25rem;
+    overflow: hidden;
+
+    margin-top: 2rem;
+    & div {
+      width: 50%;
+      height: 100%;
+
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      & img {
+        width: 100%;
+        height: auto;
+        border-radius: 15px;
+        object-fit: contain;
+        object-position: center;
+        aspect-ratio: 1;
+      }
+    }
+
+    & p {
+      width: 50%;
+      height: auto;
+    }
+  }
+
+  @media screen and (max-width: 1023px) {
+    #AboutMeWrap {
+      flex-wrap: wrap;
+      height: auto;
+      width: 100%;
+      max-width: 45rem;
+      height: auto;
+
+      & div {
+        width: 100%;
+        max-width: 30rem;
+        height: auto;
+      }
+      & p {
+        width: 100%;
+      }
+    }
+  } */
+</style>
