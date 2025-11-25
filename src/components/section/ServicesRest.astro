@@ -1,0 +1,63 @@
+---
+import ServiceRest from "../section_components/serviceRest.astro";
+import UsuwanieAwarii2 from "../../assets/usuwanieAwarii2.png";
+import PomiaryElektryczne from "../../assets/pomiaryElektryczne.png";
+import MontazInstalacji from "../../assets/montazInstalacji.png";
+import smartHome from "../../assets/smartHome.png";
+import wymianaRozdzielnic from "../../assets/wymianaRozdzielnic.png";
+import wykonaniePrzyłącza from "../../assets/wykonaniePrzyłącza.png";
+import instalacjaOswietleniaWogrodzie from "../../assets/instalacjaOswietleniaWogrodzie.png";
+import instalacjaDomofonu from "../../assets/instalacjaDomofonu.png";
+
+const images = [
+  { src: UsuwanieAwarii2 },
+  { src: PomiaryElektryczne },
+  { src: MontazInstalacji },
+  { src: smartHome },
+  { src: wymianaRozdzielnic },
+  { src: wykonaniePrzyłącza },
+  { src: instalacjaOswietleniaWogrodzie },
+  { src: instalacjaDomofonu },
+];
+const title: String[] = [
+  "Diagnostyka i Usuwanie Awarii Elektrycznych",
+  "Pomiary Elektryczne i Przeglądy Okresowe Instalacji",
+  "Montaż Instalacji Odgromowych (Piorunochronów)",
+  "Instalacja Systemów Inteligentnego Domu",
+  "Montaż i Wymiana Rozdzielnic Elektrycznych",
+  "Wykonywanie Przyłączy Energetycznych i Zasilania Budowy",
+  "Instalacja Oświetlenia Zewnętrznego i Ogrodowego",
+  "Montaż Domofonów i Wideodomofonów",
+];
+const content: String[] = [
+  "Usługa polega na szybkim zlokalizowaniu przyczyny problemów z instalacją elektryczną, takich jak nagły brak prądu, zwarcia, przepięcia czy notoryczne 'wybijanie' bezpieczników. Używamy specjalistycznego sprzętu pomiarowego, aby precyzyjnie zidentyfikować uszkodzony element lub odcinek obwodu. Po zdiagnozowaniu problemu natychmiast przystępujemy do jego usunięcia, wymieniając wadliwe komponenty, naprawiając uszkodzone przewody lub korygując błędy w połączeniach. Przeprowadzamy testy sprawdzające, aby upewnić się, że awaria została całkowicie usunięta i instalacja znów działa stabilnie. Celem jest jak najszybsze przywrócenie pełnej sprawności i bezpieczeństwa instalacji elektrycznej w Państwa domu lub firmie.",
+  "Regularne przeglądy instalacji są kluczowe dla bezpieczeństwa i wymagane przez prawo budowlane, zazwyczaj co 5 lat. W ramach usługi wykonujemy specjalistyczne pomiary, takie jak rezystancja izolacji przewodów, skuteczność ochrony przeciwporażeniowej oraz impedancja pętli zwarcia. Dokładnie testujemy również działanie wyłączników różnicowoprądowych, które chronią domowników przed porażeniem. Celem jest wykrycie ewentualnych usterek, zużycia materiałów lub uszkodzeń, zanim doprowadzą one do groźnej awarii lub pożaru. Po zakończeniu inspekcji klient otrzymuje formalny protokół pomiarowy. Dokument ten jest niezbędny do utrzymania gwarancji budynku oraz w przypadku roszczeń ubezpieczeniowych.",
+  "Instalacja odgromowa ma na celu ochronę budynku i jego mieszkańców przed tragicznymi skutkami bezpośredniego uderzenia pioruna. Usługa obejmuje montaż certyfikowanych zwodów na dachu, które 'przejmują' wyładowanie atmosferyczne. Następnie energia ta jest bezpiecznie odprowadzana do ziemi poprzez system przewodów odprowadzających oraz głęboko osadzony uziom. Prawidłowo wykonany system chroni konstrukcję budynku przed uszkodzeniem oraz zapobiega powstawaniu pożarów. Dodatkowo zabezpiecza wewnętrzną instalację elektryczną i podłączone do niej cenne urządzenia przed zniszczeniem w wyniku przepięcia. Montaż piorunochronu jest kluczowy dla bezpieczeństwa, szczególnie w przypadku budynków wolnostojących i położonych na wzniesieniach.",
+  "Systemy Smart Home pozwalają na automatyzację i zdalne zarządzanie różnymi funkcjami budynku, co przekłada się na wygodę i oszczędności. Usługa obejmuje projektowanie oraz montaż inteligentnych instalacji sterujących oświetleniem, ogrzewaniem, roletami czy systemami bezpieczeństwa. Integrujemy wszystkie komponenty w jeden spójny system, oparty o sprawdzone standardy (np. KNX) lub nowoczesne rozwiązania bezprzewodowe (Wi-Fi/Zigbee). Klient zyskuje możliwość sterowania całym domem za pomocą smartfona, tabletu lub komend głosowych. Oprócz niezrównanej wygody, inteligentny dom pozwala na realną optymalizację zużycia energii i zwiększenie poziomu bezpieczeństwa.",
+  "Rozdzielnica elektryczna to serce całej instalacji w budynku, potocznie nazywane 'skrzynką z bezpiecznikami'. Usługa polega na montażu nowej rozdzielnicy w nowym budownictwie lub wymianie starej, np. topikowej, na nowoczesne rozwiązanie modułowe. Instalujemy kluczowe zabezpieczenia: wyłączniki nadprądowe chroniące przed zwarciem oraz wyłączniki różnicowoprądowe chroniące przed porażeniem. Wszystkie obwody są starannie i czytelnie opisane, co ułatwia późniejszą eksploatację i diagnostykę. Prawidłowy montaż nowoczesnej rozdzielnicy jest fundamentem bezpiecznego i stabilnego działania całej sieci elektrycznej. Zapewnia to również możliwość łatwej rozbudowy instalacji w przyszłości, np. o fotowoltaikę czy ładowarkę do samochodu.",
+  "Przyłącze energetyczne to proces doprowadzenia zasilania z sieci dystrybutora energii (jak Tauron czy Enea) do budynku. Usługa obejmuje wykonanie prac ziemnych i ułożenie kabla zasilającego od skrzynki przyłączeniowej w granicy działki do głównej rozdzielnicy w obiekcie. Zajmujemy się również montażem tymczasowego zasilania placu budowy, tzw. 'erbetki', niezbędnego do pracy innych ekip budowlanych. Działamy w oparciu o wydane przez zakład energetyczny warunki techniczne, dbając o zgodność wykonania prac z obowiązującymi normami. Realizujemy także niezbędne formalności i pomiary odbiorcze wymagane do oficjalnego uruchomienia dostaw prądu.",
+  "Usługa ta polega na projektowaniu i montażu systemów oświetleniowych na zewnątrz budynków oraz w przestrzeni ogrodowej. Instalujemy różnego rodzaju oprawy: oświetlenie elewacyjne podkreślające architekturę, lampy najazdowe na podjazdach, kinkiety tarasowe oraz oświetlenie dekoracyjne akcentujące roślinność. Kluczowe jest zapewnienie pełnej odporności instalacji na warunki atmosferyczne, poprzez stosowanie hermetycznych złączek i opraw o wysokiej klasie szczelności (IP). Dbamy o bezpieczeństwo, stosując odpowiednie zabezpieczenia i przewody przeznaczone do układania w ziemi. Montujemy także systemy sterowania, takie jak czujniki zmierzchu, czujniki ruchu czy programatory czasowe, automatyzujące pracę oświetlenia.",
+  "Instalacja systemów domofonowych i wideodomofonowych znacząco podnosi bezpieczeństwo i komfort mieszkańców, dając kontrolę nad dostępem do posesji. Usługa obejmuje montaż kasety zewnętrznej (panelu z przyciskami) przy furtce lub wejściu oraz instalację unifonu (słuchawki) lub monitora wewnątrz budynku. Prowadzimy niezbędne okablowanie między jednostkami oraz podłączamy elektrozaczep, który umożliwia zdalne otwieranie drzwi lub bramy. Konfigurujemy system tak, aby zapewnić czystą komunikację głosową oraz wyraźny obraz w przypadku wideodomofonów. Nowoczesne urządzenia oferują również integrację ze smartfonem, pozwalając na odbieranie połączeń i otwieranie wejścia z dowolnego miejsca na świecie.",
+];
+---
+
+<section>
+  <div class="header">
+    <h2>Pozostałe usługi elektryczne</h2>
+    <span>Wykonywane usługi elekryczne przez firmę</span>
+  </div>
+  <div id="restOfServices">
+    {
+      images.map((item, index) => (
+        <ServiceRest
+          image={item.src}
+          alt={title[index]}
+          title={title[index]}
+          content={content[index]}
+        />
+      ))
+    }
+  </div>
+</section>
+
+<style></style>

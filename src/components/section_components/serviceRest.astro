@@ -1,0 +1,61 @@
+---
+import Image from "astro/components/Image.astro";
+
+const { image, alt, title, content } = Astro.props;
+---
+
+<div class="servWrap">
+  <Image src={image} alt={alt} />
+  <div>
+    <h5>{title}</h5>
+    <p>
+      {content}
+    </p>
+  </div>
+</div>
+
+<style>
+  .servWrap {
+    width: 100%;
+    max-width: 70rem;
+    height: 30rem;
+    padding: 2rem;
+    /* background-color: var(--backgroundColorDarkLight); */
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    border-radius: 15px;
+  }
+
+  .servWrap div h5 {
+    margin-bottom: 0.5rem;
+  }
+
+  img {
+    height: 100%;
+    width: auto;
+    max-width: 50%;
+    flex: 1;
+    object-fit: cover;
+    border-radius: 15px;
+  }
+
+  @media screen and (max-width: 1023px) {
+    .servWrap {
+      height: auto;
+      flex-wrap: wrap;
+
+      max-width: 30rem;
+      padding: 1.25rem;
+    }
+    img {
+      width: 100%;
+      max-width: 100%;
+
+      height: auto;
+    }
+  }
+</style>

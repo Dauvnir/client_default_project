@@ -1,0 +1,51 @@
+---
+import Question from "../section_components/question.astro";
+
+const questions: string[] = [
+  "1. Ile kosztuje usługa elektryczna?",
+  "2. Czy posiadają Państwo odpowiednie uprawnienia i ubezpieczenie?",
+  "3. Jak szybko możecie Państwo przyjechać w razie nagłej awarii?",
+  "4. Czy na wykonane usługi udzielana jest gwarancja?",
+  "5. Jak często należy wykonywać przegląd instalacji elektrycznej?",
+  "6. Planuję remont/budowę. Czy pomożecie w formalnościach z zakładem energetycznym?",
+  "7. Czy instalacja 'inteligentnego domu' jest bardzo skomplikowana i droga?",
+  "8. Czy po zakończeniu prac zostanie bałagan?",
+];
+const answers: string[] = [
+  "Wycena jest niemal zawsze indywidualna, ponieważ zależy od złożoności problemu, rodzaju użytych materiałów i czasu potrzebnego na pracę. Mniejsze interwencje, jak diagnostyka awarii, często rozliczane są na podstawie stawki godzinowej. Przy większych projektach, jak wymiana rozdzielnicy czy montaż instalacji odgromowej, przygotowujemy darmową, niezobowiązującą wycenę po zapoznaniu się ze szczegółami lub wizji lokalnej.",
+  "Tak, jest to absolutna podstawa naszej działalności. Posiadamy pełne i aktualne uprawnienia SEP (Stowarzyszenia Elektryków Polskich) w zakresie eksploatacji i dozoru, które są niezbędne do legalnego wykonywania prac oraz dokonywania pomiarów. Dodatkowo, nasza firma jest objęta ubezpieczeniem OC (odpowiedzialności cywilnej), co chroni Państwa mienie na wypadek jakichkolwiek nieprzewidzianych zdarzeń podczas naszej pracy.",
+  "Nagłe awarie, takie jak całkowity brak prądu, zwarcia czy zagrożenie porażeniem, traktujemy priorytetowo. Staramy się reagować tak szybko, jak to możliwe, często jeszcze tego samego dnia. W przypadku prac planowych, takich jak montaż oświetlenia czy przeglądy, termin ustalamy wspólnie, aby dopasować się do Państwa harmonogramu i zapewnić dogodny czas realizacji.",
+  "Oczywiście. Na wszystkie wykonane przez nas prace instalacyjne udzielamy pisemnej gwarancji (rękojmi), co potwierdza jakość naszych usług. Ponadto, wszystkie materiały i urządzenia, które montujemy (np. rozdzielnice, osprzęt, lampy), są objęte gwarancją producenta. W razie jakichkolwiek problemów wynikających z naszej pracy, mogą Państwo liczyć na szybką i bezpłatną interwencję.",
+  "Zgodnie z polskim Prawem Budowlanym, właściciel lub zarządca budynku ma obowiązek zlecać okresowe pomiary i przegląd instalacji elektrycznej co najmniej raz na 5 lat. Regularne przeglądy są kluczowe dla bezpieczeństwa – pozwalają wykryć usterki (np. uszkodzenia izolacji), zanim doprowadzą do pożaru lub porażenia. Protokół z pomiarów jest również często wymagany przez firmy ubezpieczeniowe.",
+  "Tak, oferujemy pełne wsparcie w tym zakresie. Przy usługach takich jak wykonywanie przyłączy energetycznych czy modernizacje instalacji, pomagamy w skompletowaniu dokumentacji i wypełnieniu wniosków do dystrybutora energii (jak Tauron, Enea czy PGE). Wykonujemy również niezbędne pomiary odbiorcze i wystawiamy protokoły wymagane do uruchomienia zasilania lub zmiany taryfy.",
+  "Niekoniecznie. Nowoczesne systemy 'smart home' nie zawsze wymagają kucia ścian i wymiany całej instalacji. Wiele rozwiązań opartych na technologii Wi-Fi lub Zigbee można wprowadzić etapami, zaczynając np. od inteligentnego oświetlenia i sterowania roletami. Chętnie doradzimy rozwiązania dopasowane do Państwa potrzeb i budżetu, od prostych modułów po zintegrowane systemy zarządzania całym budynkiem.",
+  "Zawsze dokładamy wszelkich starań, aby zminimalizować niedogodności związane z naszą pracą. Używamy profesjonalnych narzędzi, które często ograniczają pylenie (np. odkurzacze przemysłowe). Po zakończeniu prac, takich jak wymiana rozdzielnicy czy montaż tras kablowych, zawsze sprzątamy po sobie, pozostawiając miejsce pracy w należytym porządku.",
+];
+---
+
+<section>
+  <div class="header">
+    <h2>FAQ</h2>
+    <span> Pytania i odpowiedzi na popularne pytania </span>
+  </div>
+  <div id="questionsWrapper">
+    {
+      questions.map((question, index) => (
+        <Question key={index} question={question} answer={answers[index]} />
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  #questionsWrapper {
+    width: 100%;
+    max-width: 70rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+    gap: 2rem;
+  }
+</style>

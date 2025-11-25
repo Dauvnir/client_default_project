@@ -1,0 +1,61 @@
+---
+const { question, answer } = Astro.props;
+---
+
+<details>
+  <summary
+    ><strong>{question}</strong>
+    <svg
+      width="45"
+      height="26"
+      viewBox="0 0 45 26"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M19.7993 24.7485L-0.000152588 4.949L4.94884 0L22.2739 17.325L39.5989 0L44.5479 4.949L24.7484 24.7485C24.092 25.4046 23.2019 25.7733 22.2739 25.7733C21.3458 25.7733 20.4557 25.4046 19.7993 24.7485Z"
+        fill="#FFBF00"></path>
+    </svg></summary
+  >
+
+  <p>{answer}</p>
+</details>
+
+<style>
+  details,
+  div {
+    width: 100%;
+    height: auto;
+  }
+
+  details[open] summary {
+    border-radius: 10px 10px 0px 0px;
+  }
+  details[open] summary svg {
+    transform: rotate(180deg);
+  }
+  summary {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--backgroundColorDarkLight);
+    border-radius: 10px;
+    list-style: none;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+  summary svg {
+    height: 100%;
+    width: 1.5rem;
+    transform: rotate(0deg);
+    transition: all 0.75s ease;
+  }
+  p {
+    padding: 1rem;
+    background-color: hsl(0, 0%, 15%);
+    border-radius: 0px 0px 10px 10px;
+  }
+</style>
